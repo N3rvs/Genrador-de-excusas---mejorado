@@ -1,6 +1,6 @@
 'use strict'
 
-// Array para combinar y hacer el generador de excusas aleatorio 😆
+// Arreglos para combinar y hacer el generador de excusas aleatorio 😆
 
 const quien = [
   "El cartero",
@@ -25,26 +25,22 @@ const cuando = [
 ];
 // Funcion para generar las palabras aleatorias.
 
-const random = (palabra) =>{
-  return Math.floor(Math.random() * palabra.length)
+const arreglosAleatorios = (arreglos) =>{
+  return Math.floor(Math.random() * arreglos.length)
 }
 
 // funcion que genera las excusas 😂
 
 const generadorDeExcusas = function (quien, queHizo, cuando) {
-  const sujeto = random(quien)
-  const verbo = random(queHizo)
-  const accion = random (cuando)
+  const sujeto = arreglosAleatorios(quien)
+  const verbo = arreglosAleatorios(queHizo)
+  const accion = arreglosAleatorios (cuando)
 return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 };
 
 // Evento  para darle accion al generador de excusas 🛎️
 
-const play = document.querySelector('.play');
-play.addEventListener ('click',() =>{
-  const miExcusa = document.getElementById("miExcusa");  //id de mi clase "card-litle" para combinar con mi evento 👌
-  miExcusa.innerHTML = generadorDeExcusas(quien, queHizo, cuando);
+document.querySelector('.play').addEventListener ('click',() =>{
+document.getElementById("miExcusa").innerHTML = generadorDeExcusas(quien, queHizo, cuando);;  //id "miExcusa" de la clase "card-litle" para combinar con mi evento 👌
 })
-
-
 
