@@ -1,6 +1,6 @@
 'use strict'
 
-// Array para combinar y hacer el generador de excusas aleatorio 😆
+// Arreglos para combinar y hacer el generador de excusas aleatorio 😆
 
 const quien = [
   "El cartero",
@@ -25,16 +25,16 @@ const cuando = [
 ];
 // Funcion para generar las palabras aleatorias.
 
-const random = (palabra) =>{
-  return Math.floor(Math.random() * palabra.length)
+const arreglosAleatorios = (arreglos) =>{
+  return Math.floor(Math.random() * arreglos.length)
 }
 
 // funcion que genera las excusas 😂
 
 const generadorDeExcusas = function (quien, queHizo, cuando) {
-  const sujeto = random(quien)
-  const verbo = random(queHizo)
-  const accion = random (cuando)
+  const sujeto = arreglosAleatorios(quien)
+  const verbo = arreglosAleatorios(queHizo)
+  const accion = arreglosAleatorios (cuando)
 return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 };
 
