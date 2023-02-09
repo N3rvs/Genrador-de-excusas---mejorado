@@ -17,7 +17,7 @@
       overflow: hidden;
       opacity: 0.7;
       }
-
+  
       .card {
         width: 190px;
         height: 254px;
@@ -26,7 +26,7 @@
         transition: all .3s;
        }
    
-      button {
+    button {
         --glow-color: rgb(126, 41, 206);
         --glow-spread-color: rgba(168, 97, 235, 0.781);
         --enhanced-glow-color: rgb(231, 206, 255);

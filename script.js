@@ -1,13 +1,14 @@
 'use strict'
 
-let quien = [
+// Array para combinar y hacer el generador de excusas aleatorio 😆
+
+const quien = [
   "El cartero",
-  "Mi hermnao",
-  "Un amigo",
+  "Mi hermano",
   "Mi abuelo",
   "Una niña",
 ];
-let queHizo = [
+const queHizo = [
   "se llevo sin querer",
   "Me hizo una mala broma y daño",
   "robó",
@@ -16,28 +17,34 @@ let queHizo = [
   "mojo con la manguera",
   "se limpio la boca con ",
 ];
-let cuando = [
+const cuando = [
   "antes de venir a clases 🧑‍🏫",
   "cuando mi padre me llamaba 🥸",
   "cuando estaba desayunando 🥐🥖🥞",
   "mientras estaba preparando la mochila 🎒😶‍🌫️",
 ];
+// Funcion para generar las palabras aleatorias.
+
+const random = (palabra) =>{
+  return Math.floor(Math.random() * palabra.length)
+}
+
+// funcion que genera las excusas 😂
 
 const generadorDeExcusas = function (quien, queHizo, cuando) {
-  let sujeto = Math.floor(Math.random() * quien.length);
-  let verbo = Math.floor(Math.random() * queHizo.length);
-  let accion = Math.floor(Math.random() * cuando.length);
-  const resultado = `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
-return resultado
+  const sujeto = random(quien)
+  const verbo = random(queHizo)
+  const accion = random (cuando)
+return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 };
 
-const play = document.querySelector('.play');
+// Evento  para darle accion al generador de excusas 🛎️
 
+const play = document.querySelector('.play');
 play.addEventListener ('click',() =>{
-  const miExcusa = document.getElementById("miExcusa");
+  const miExcusa = document.getElementById("miExcusa");  //id de mi clase "card-litle" para combinar con mi evento 👌
   miExcusa.innerHTML = generadorDeExcusas(quien, queHizo, cuando);
 })
 
-  
 
 
