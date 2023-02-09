@@ -40,11 +40,7 @@ return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 
 // Evento  para darle accion al generador de excusas 🛎️
 
-const play = document.querySelector('.play');
-play.addEventListener ('click',() =>{
-  document.getElementById("miExcusa").innerHTML = generadorDeExcusas(quien, queHizo, cuando);;  //id "miExcusa"  de "card-litle" para combinar con mi evento 👌
-
+document.querySelector('.play').addEventListener ('click',() =>{
+document.getElementById("miExcusa").innerHTML = generadorDeExcusas(quien, queHizo, cuando);;  //id "miExcusa" de la clase "card-litle" para combinar con mi evento 👌
 })
-
-
 
