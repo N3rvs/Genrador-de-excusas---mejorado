@@ -42,8 +42,8 @@ return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 
 const play = document.querySelector('.play');
 play.addEventListener ('click',() =>{
-  const miExcusa = document.getElementById("miExcusa");  //id de mi clase "card-litle" para combinar con mi evento 👌
-  miExcusa.innerHTML = generadorDeExcusas(quien, queHizo, cuando);
+  document.getElementById("miExcusa").innerHTML = generadorDeExcusas(quien, queHizo, cuando);;  //id "miExcusa"  de "card-litle" para combinar con mi evento 👌
+
 })
 
 
