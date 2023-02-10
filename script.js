@@ -25,16 +25,16 @@ const cuando = [
 ];
 // Funcion para generar las palabras aleatorias.
 
-const obtenerAarreglo = (arreglos) =>{
-  return Math.floor(Math.random() * arreglos.length)
+const getRandomExcuses = (arrs) =>{
+  return Math.floor(Math.random() * arrs.length)
 }
 
 // funcion que genera las excusas 😂
 
 const generadorDeExcusas = function (quien, queHizo, cuando) {
-  const sujeto = obtenerAarreglo(quien)
-  const verbo = obtenerAarreglo(queHizo)
-  const accion = obtenerAarreglo(cuando)
+  const sujeto = getRandomExcuses(quien)
+  const verbo = getRandomExcuses(queHizo)
+  const accion = getRandomExcuses(cuando)
 return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
 };
 
