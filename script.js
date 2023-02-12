@@ -9,13 +9,13 @@ const quien = [
   "Una niña",
 ];
 const queHizo = [
-  "se llevo sin querer",
-  "Me hizo una mala broma y daño",
-  "robó",
-  "quemo sin culpa",
-  "mancho de cafe",
-  "mojo con la manguera",
-  "se limpio la boca con ",
+  "se llevo sin querer mi tarea",
+  "Me hizo una mala broma y daño mi tarea",
+  "robó mi tarea",
+  "quemo sin culpa mi tarea",
+  "mancho de cafe mi tarea",
+  "mojo con la manguera , mi tarea",
+  "se limpio la boca con mi tarea ",
 ];
 const cuando = [
   "antes de venir a clases 🧑‍🏫",
@@ -23,24 +23,31 @@ const cuando = [
   "cuando estaba desayunando 🥐🥖🥞",
   "mientras estaba preparando la mochila 🎒😶‍🌫️",
 ];
+
 // Funcion para generar las palabras aleatorias.
 
-const getRandomExcuses = (arrs) =>{
-  return Math.floor(Math.random() * arrs.length)
-}
+const getExcusesByArr = arrays => Math.floor(Math.random() * arrays.length);
+
 
 // funcion que genera las excusas 😂
 
-const generadorDeExcusas = function (quien, queHizo, cuando) {
-  const sujeto = getRandomExcuses(quien)
-  const verbo = getRandomExcuses(queHizo)
-  const accion = getRandomExcuses(cuando)
-return `${quien[sujeto]} ${queHizo[verbo]} mi tarea ${cuando[accion]}`;
+function excuseGenerator () {
+  const sujetoIndex = getExcusesByArr (quien)
+  const accionIndex = getExcusesByArr (queHizo)
+  const cuandoIndex = getExcusesByArr(cuando)
+  const message = displayMessage(sujetoIndex,accionIndex,cuandoIndex)
+  return message
+}
+
+//funcion mensaje
+
+const displayMessage = (sujetoIndex,accionIndex,cuandoIndex) => {
+return (quien[sujetoIndex] + ' ' + queHizo[accionIndex] + ' '  + cuando [cuandoIndex])
 };
 
 // Evento  para darle accion al generador de excusas 🛎️
 
-document.querySelector('.play').addEventListener ('click',() =>{
-document.getElementById("miExcusa").innerHTML = generadorDeExcusas(quien, queHizo, cuando);;  //id "miExcusa" de la clase "card-litle" para combinar con mi evento 👌
+document.querySelector('.buttonOfExcuses').addEventListener ('click',() =>{
+document.getElementById("miExcusa").innerHTML = excuseGenerator();;  //id "miExcusa" de la clase "card-litle" para combinar con mi evento 👌
 })
 
