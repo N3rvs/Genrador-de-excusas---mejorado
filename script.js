@@ -34,13 +34,16 @@ const getExcusesByArr = arrays => Math.floor(Math.random() * arrays.length);
 const displayMessage = (sujetoIndex,accionIndex,cuandoIndex) => {
 return (quien[sujetoIndex] + ' ' + queHizo[accionIndex] + ' '  + cuando [cuandoIndex])
 };
+
+
 // funcion que genera las excusas 😂
+
 function excuseGenerator () {
   const sujetoIndex = getExcusesByArr (quien)
   const accionIndex = getExcusesByArr (queHizo)
   const cuandoIndex = getExcusesByArr(cuando)
   const message = displayMessage(sujetoIndex,accionIndex,cuandoIndex)
-  return message
+return message
 }
 
 
