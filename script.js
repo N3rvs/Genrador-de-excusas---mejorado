@@ -1,7 +1,5 @@
 'use strict'
 
-// Arreglos para combinar y hacer el generador de excusas aleatorio 😆
-
 const quien = [
   "El cartero",
   "Mi hermano",
@@ -24,19 +22,12 @@ const cuando = [
   "mientras estaba preparando la mochila 🎒😶‍🌫️",
 ];
 
-// Funcion para generar las palabras aleatorias.
-
 const getExcusesByArr = arrays => Math.floor(Math.random() * arrays.length);
 
-
-//funcion mensaje
 
 const displayMessage = (sujetoIndex,accionIndex,cuandoIndex) => {
 return (quien[sujetoIndex] + ' ' + queHizo[accionIndex] + ' '  + cuando [cuandoIndex])
 };
-
-
-// funcion que genera las excusas 😂
 
 function excuseGenerator () {
   const sujetoIndex = getExcusesByArr (quien)
@@ -46,10 +37,7 @@ function excuseGenerator () {
 return message
 }
 
-
-// Evento  para darle accion al generador de excusas 🛎️
-
 document.querySelector('.buttonOfExcuses').addEventListener ('click',() =>{
-document.getElementById("miExcusa").innerHTML = excuseGenerator();;  //id "miExcusa" de la clase "card-litle" para combinar con mi evento 👌
+document.getElementById("miExcusa").innerHTML = excuseGenerator(); 
 })
 
